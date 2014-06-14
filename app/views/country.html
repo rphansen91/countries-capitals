@@ -1,0 +1,34 @@
+<div class="jumbotron text-center">
+	<h1>{{country.countryName}}</h1>
+	<div class="row">
+		<div class="col-sm-6 text-right">
+			<h3>Population of Country:</h3>
+			<h3>Area:</h3>
+			<h3>Capital:</h3>
+			<h3>Population of Capital:</h3>
+			<h3>Neighbors:</h3>
+		</div>
+		<div class="col-sm-6 text-left">
+			<h3>{{country.population|number}}</h3>
+			<h3>{{country.areaInSqKm|number}} square km</h3>
+			<h3 ng-if="country.capital">{{country.capital}}</h3>
+			<h3 ng-if="!country.capital">No Capital</h3>
+			<h3>{{capital.population|number}}</h3>
+			<h3>
+				<a ng-repeat="neighbor in neighbors" 
+				   ng-href="#/country/{{neighbor.countryCode}}">{{neighbor.name}}
+				   <span ng-if="!$last">, </span>
+				</a>
+				<span ng-if="island">Island</span>
+			</h3>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-sm-6 text-center">
+			<img src="http://www.geonames.org/img/country/250/{{country.countryCode}}.png" alt="" class="map">
+		</div>
+		<div class="col-sm-6 text-center">
+			<img src="http://www.geonames.org/flags/x/{{country.countryCode|lowercase}}.gif" alt="" class="flag">
+		</div>
+	</div>
+</div>

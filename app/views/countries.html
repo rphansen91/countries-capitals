@@ -1,0 +1,33 @@
+<div class="jumbotron text-center" ng-controller="CountriesCtrl">
+	<div class="space">
+		<h1>Countries</h1>
+		<input type="text" ng-model="search" placeholder="Search Country" class="text-center"/>
+	</div>
+	<table>
+		<thead>
+			<tr class="space">
+				<td>Country</td>
+				<td>Country Code</td>
+				<td>Capital</td>
+				<td class="hidden-xs">Area (km2)</td>
+				<td class="hidden-xs">Population</td>
+				<td class="hidden-xs">Continent</td>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class="space" ng-click="change(country)" 
+							  ng-repeat="country in countries | filter:search"
+							  ng-mouseenter="hover=!hover"
+							  ng-mouseleave="hover=!hover"
+							  ng-class="{hover:hover}">
+				<td>{{country.countryName}}</td>
+				<td>{{country.countryCode}}</td>
+				<td ng-if="country.capital">{{country.capital}}</td>
+				<td ng-if="!country.capital">No Capital</td>
+				<td class="hidden-xs text-right">{{country.areaInSqKm|number}}</td>
+				<td class="hidden-xs text-right">{{country.population|number}}</td>
+				<td class="hidden-xs">{{country.continent}}</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
