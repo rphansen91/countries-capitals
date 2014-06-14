@@ -1,0 +1,30 @@
+table {border: 1px solid #333;}
+thead {
+	border-bottom: 1px solid #333;
+	font-size: 18px;
+	font-weight: bold;
+}
+td {
+	border-right: 1px solid #333;
+	padding-right: 5px;
+	padding-left: 5px;
+	cursor: default;
+}
+.space { padding-bottom: 5px; }
+.hover { background-color: rgba(0,0,200,0.5); }
+.map   { margin-right: -50%; }
+.flag  {
+	margin-left: -50%;
+	width: 50%;
+}
+.jumbotron h1, .header {
+	font-size: 63px;
+	color: rgb(230,230,230);
+}
+.jumbotron { background-color: rgba(230,230,230,0.6); }
+.bkg-img {
+	background-image: url(../images/Earth.jpg);
+	background-attachment:fixed;
+	background-repeat:no-repeat;
+	background-size:cover;
+}
