@@ -1,4 +1,4 @@
-'use strict'
+'use strict';
 
 (function (window) {
 	window.app = angular.module('CnCApp', ['ngRoute','ngAnimate']);
