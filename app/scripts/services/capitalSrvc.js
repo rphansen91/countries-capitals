@@ -4,7 +4,12 @@ window.app.factory('capitalSrvc', ['SEARCH_URL', 'USERNAME','$http','$q',
 						function (SEARCH_URL, USERNAME, $http, $q) {
 	return function (code, capital) {
 		var defer = $q.defer();
-		$http.get(SEARCH_URL + 'country=' + code + '&q=' + capital + '&' + USERNAME)
+		var url = SEARCH_URL + 'country=' + code + '&q=' + capital + '&' + USERNAME;
+		$http({
+			method:'GET',
+			url:url,
+			cache: true
+		})
 		.success(function (data) {
 			defer.resolve(data.geonames[0]);
 			console.log(data);
